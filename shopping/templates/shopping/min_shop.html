@@ -1,1 +1,21 @@
-{{min_shop}}
+{% extends 'shopping/base.html' %}
+{% block content %}
+    <h3 class='text-center'>Стоимость покупок составит</h3>
+    <p class='text-center'>
+        <ul class="list-group">
+            <li class='list-group-item text-center'><font size="4">Ашан: {{ Auchan }}</font> </li>
+            <li class='list-group-item text-center'><font size="4">Перекресток: {{ Perekrestok }} </font></li>
+            <li class='list-group-item text-center'><font size="4">Metro: {{ Metro }} </font></li>
+        </ul>   
+    </p>
+    
+    <h4 class='text-center'> Для вашего удобства на карте выведены магазины с минимальной стоимостью Вашей продуктовой корзины</h4>
+    {% if min_shop == 'Auchan'%}
+        <iframe src="https://yandex.ru/map-widget/v1/-/CBBlZRvvGD" width="100%" height="600" frameborder="1" allowfullscreen="true"></iframe>
+    {% elif min_shop == 'Metro' %}
+        <iframe src="https://yandex.ru/map-widget/v1/-/CBBlZSb73D" width="100%" height="600" frameborder="1" allowfullscreen="true"></iframe>    
+    {% elif min_shop == 'Perekrestok'%}    
+        <iframe src="https://yandex.ru/map-widget/v1/-/CBBlZSb73D" width="100%" height="600" frameborder="1" allowfullscreen="true"></iframe>
+    {% endif %}
+{% endblock %}  
+        
