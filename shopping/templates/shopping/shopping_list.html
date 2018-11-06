@@ -1,22 +1,24 @@
 {% extends 'shopping/base.html' %}
 
 {% block content %}
+<div class="padding_from-top">
     <h3 class ="text-center">Выберите товары из списка Ваших покупок и нажмите "Готово"</h3>
-        <form action="/shopping/" method="POST">{% csrf_token %}
+    <form action="/shopping/" method="POST">{% csrf_token %}
+        <div class="row">
             <div class="row">
-                <div class="row">
-                    {% for button in buttons %}
-                        <div class="col-sm-3 margin-bot-top">
-                            <div class="text-center align-middle shadow-lg p-3 mb-3 bg-white rounded">
-                                {{button}}
-                                <input type="checkbox" name="{{button}}">
-                            </div>
+                {% for button in buttons %}
+                    <div class="col-sm-3 margin-bot-top">
+                        <div class="text-center align-middle shadow-lg p-3 mb-3 bg-white rounded">
+                            {{button}}
+                            <input type="checkbox" name="{{button}}">
                         </div>
-                    {% endfor %}
-                </div>
+                    </div>
+                {% endfor %}
             </div>
-            <div class="col-sm margin-bot-top">
-                <button type="submit" class="btn btn-block btn-success">Готово</button>
-            </div>    
-        </form>
+        </div>
+        <div class="col-sm margin-bot-top">
+            <button type="submit" class="btn btn-block btn-success">Готово</button>
+        </div>    
+    </form>
+</div>        
 {% endblock %}

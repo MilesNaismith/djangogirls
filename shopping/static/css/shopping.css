@@ -5,3 +5,6 @@
 .back {
     background: grey url(../pic/light-board-1.jpg);
 }
+.padding_from-top{
+    padding-top: 5%
+}
